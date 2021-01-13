@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add sighting</title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
+    <link rel="shortcut icon" href="{{url_for('static', filename='favicon.ico')}}">
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <!-- Bootstrap core CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Material Design Bootstrap -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    .main_form {
+      margin: 30px;
+    }
+  </style>
+  <body>
+    <h1 style="text-align: center">Add sighting</h1>
+    <div class="main_form">
+      <form
+        class="md-form"
+        method="POST"
+        action="#"
+        enctype="multipart/form-data"
+      >
+        <h2>Title</h2>
+        <input type="text" name="title" placeholder="title" required />
+        <br /><br />
+
+        <h2>Picture</h2>
+        <div class="file-field">
+          <div class="file-path-wrapper">
+            <input
+              class="file-path validate"
+              type="file"
+              placeholder="Upload your file"
+              name="picture"
+              required
+              accept="image/*"
+            />
+          </div>
+          <h5>allowed formats .jpeg .jpg .png</h3>
+        </div>
+        <br />
+        <h2>Species</h2>
+        <input type="text" name="species" id="" placeholder="species" />
+        <br /><br />
+        <h2>Comment</h2>
+        <div class="form-group">
+          <textarea
+            class="form-control rounded-0"
+            id="exampleFormControlTextarea2"
+            rows="3"
+            placeholder="comment"
+            name="comment"
+          ></textarea>
+        </div>
+        <br /><br />
+        <h2>Country</h2>
+        <input type="text" name="country" placeholder="country" id="" />
+        <br /><br />
+        <h2>Site</h2>
+        <input type="text" name="site" placeholder="site" id="" />
+        <br /><br />
+        <button class="btn btn-primary btn-lg">Add Sight</button>
+      </form>
+    </div>
+  </body>
+  <!-- JQuery -->
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+  ></script>
+  <!-- Bootstrap tooltips -->
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"
+  ></script>
+  <!-- Bootstrap core JavaScript -->
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"
+  ></script>
+  <!-- MDB core JavaScript -->
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"
+  ></script>
+</html>

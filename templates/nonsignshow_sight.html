@@ -1,0 +1,50 @@
+{%extends 'nonsignbase.html'%} {%block title%}{{values.title}}{%endblock%}
+{%block content%}
+<style>
+  .main-content {
+    margin: 20px;
+  }
+  img {
+    object-fit: contain;
+    max-height: 600px;
+    max-width: 600px;
+  }
+  @media (max-width: 990px) {
+    img {
+      object-fit: contain;
+      max-height: 17rem;
+      max-width: 17rem;
+    }
+  }
+  .text {
+    text-transform: capitalize;
+  }
+</style>
+<div class="main-content">
+  <h1 class="text">{{values.title}}</h1>
+  <h4>By {{values.by}} | Posted on {{values.uploaded}}</h4>
+  <img src="{{values.picture}}" />
+  <h3 class="text">Species :- {{values.species}}</h3>
+  <br />
+
+  <h3>Was Seen At</h3>
+  <h3 class="text">{{values.country}}, {{values.site}}</h3>
+  <br />
+
+  <h3>Description</h3>
+  <h3>{{values.comment}}</h3>
+
+  <hr />
+  <a href="/post/comment/sight/{{values.id}}" class="btn btn-primary btn-lg"
+    >Comment</a
+  >
+  <br />
+  <br />
+  {% for item in comments%}
+  <h2>{{item.by}}</h2>
+  <ul>
+    {{item.comment}}
+  </ul>
+  {%endfor%}
+</div>
+{%endblock%}

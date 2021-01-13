@@ -1,0 +1,53 @@
+{%extends 'signbase.html'%} {%block title%}BioDataCenter || Your
+Posts{%endblock%} {%block content%}
+<style>
+  .text {
+    text-transform: capitalize;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .main {
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  @media (max-width: 990px) {
+    .main {
+      margin: 20px;
+      flex-direction: column-reverse;
+    }
+  }
+</style>
+<h1 class="center">Your posts</h1>
+<div class="main">
+  {%for item in posts%}
+  <div class="card">
+    <div class="card-body">
+      <h1 class="card-title text">{{item.title}}</h1>
+      <h3 class="card-text">{{item.comment}}</h3>
+      <hr />
+      <h3 class="card-text">Posted On: {{item.uploaded}}</h3>
+      <br />
+      <a class="btn btn-primary btn-md" href="/sight/detail/{{item.id}}"
+        >Go To Post</a
+      >
+      <form action="#" method="POST">
+        <button
+          class="btn btn-danger btn-md"
+          name="remove"
+          value="{{item.id}}"
+          type="submit"
+        >
+          Remove Post
+        </button>
+      </form>
+    </div>
+  </div>
+  {%endfor%}
+</div>
+{%endblock%}

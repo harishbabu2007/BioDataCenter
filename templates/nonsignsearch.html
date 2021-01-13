@@ -1,0 +1,47 @@
+{%extends "nonsignbase.html"%} {%block title%}Sightings{%endblock%} {%block
+content%}
+<style>
+  .all {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 20px;
+  }
+  .center {
+    text-align: center;
+  }
+</style>
+<div class="center">
+  <h1>You can View all the sightings here</h1>
+  <a href="/sighting/add/post">
+    <button class="btn btn-primary btn-lg">Try Adding One 😄</button>
+  </a>
+  <br /><br />
+  <form method="GET" action="/search">
+    <input
+      style="outline: none; padding: 10px 15px"
+      type="submit text"
+      name="query"
+      placeholder="search"
+    />
+    <button type="submit" class="btn btn-green btn-md">search</button>
+  </form>
+</div>
+<br />
+<div class="all">
+  {% for item in values%}
+  <div class="jumbotron">
+    <h2 style="text-transform: capitalize" class="display-4">{{item.title}}</h2>
+    <p class="lead">By {{item.by}} | Posted on {{item.uploaded}}</p>
+    <h4 id="comment" class="lead">{{item.comment}}</h4>
+    <hr class="my-4" />
+    <h3 style="text-transform: capitalize">{{item.country}},{{item.site}}</h3>
+    <a
+      class="btn btn-primary btn-lg"
+      href="/sight/detail/{{item.id}}"
+      role="button"
+      >Learn more</a
+    >
+  </div>
+  {%endfor%}
+</div>
+{%endblock%}
